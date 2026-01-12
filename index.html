@@ -268,12 +268,14 @@
 
 @media (max-width: 600px) {
 
+  /* ヘッダー完全に消す */
   header,
   .header,
   #header {
     display:none !important;
   }
 
+  /* 画面端まで使う */
   body{
     margin:0;
     padding:0;
@@ -286,28 +288,41 @@
     padding:0;
   }
 
-  .main{
-    display:grid;
+  /* works を2列Gridにする */
+  #works{
+    display:grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap:12px;
     width:100%;
-    padding:0;
-  }
-
-  #works{
-    width:100%;
     margin:0;
-    padding:0;
+    padding:12px; /* ← 端ピッタリが嫌ならここだけ残す */
+    box-sizing:border-box;
   }
 
+  /* main直下は非表示（worksだけ出す） */
   .main > *{
     display:none;
   }
 
   #works{
-    display:block !important;
+    display:grid !important;
+  }
+
+  /* 各カード（アイコン）を横幅いっぱいに */
+  #works > *{
+    width:100%;
+    max-width:none;
+    margin:0;
+  }
+
+  /* 画像がはみ出さないように */
+  #works img{
+    width:100%;
+    height:auto;
+    display:block;
   }
 }
+
 
   </style>
 </head>
