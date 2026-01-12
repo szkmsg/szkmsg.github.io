@@ -41,7 +41,7 @@
       width:100%;
       height:80px;
       background:rgba(255,249,242,0.9);
-      backdrop-filter:blur(6px););
+      backdrop-filter:blur(6px);
       z-index:1000;
       display:flex;
       align-items:center;
@@ -268,47 +268,59 @@
 
 @media (max-width: 600px) {
 
-  /* 上の固定メニューを消す */
-  .topbar{
+  .meta{
+    font-size:12px;
+  }
+
+  /* 上部メニューとヘッダーを消す */
+  .topbar,
+  header,
+  .header {
     display:none !important;
   }
 
-  /* bodyの余白を消す */
+  /* プロフィール欄も非表示 */
+  .profile{
+    display:none;
+  }
+
+  /* 画面端まで使う */
   body{
     padding:0;
   }
 
-  /* wrapの最大幅を解除 */
   .wrap{
     max-width:none;
     width:100%;
   }
 
-  /* worksのカード背景の余白を消す */
+  /* worksカードの余白を消す */
   .content{
     padding:0;
     border-radius:0;
   }
 
-  /* ★ここが本命：アイコンを2列にする */
+  /* ===== 作品サムネ一覧 ===== */
   .gallery{
     display:grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap:12px;
-    padding:12px; /* 端に少し余白ほしければ */
+    padding:12px;
   }
 
-  /* 各アイコンを幅いっぱいに */
   .thumb{
     width:100%;
     margin:0;
   }
 
+  /* サムネ画像を正方形に */
   .thumb img{
     width:100%;
-    height:auto;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
     display:block;
   }
+
 }
 
 
