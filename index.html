@@ -41,7 +41,7 @@
       width:100%;
       height:80px;
       background:rgba(255,249,242,0.9);
-      backdrop-filter:blur(6px);
+      backdrop-filter:blur(6px););
       z-index:1000;
       display:flex;
       align-items:center;
@@ -265,66 +265,46 @@
       color:#8a6f56;
       font-size:12px;
     }
-/* ===== 作品一覧だけ表示 ===== */
 
-/* 消したいもの */
-.topbar,
-.header,
-.profile,
-footer {
-  display: none;
-}
+    @media (max-width: 600px) {
+      .header,
+      .profile,
+      footer {
+        display:none;
+      }
 
-/* レイアウトを1カラムに */
-.main {
-  display: block;
-}
+      .main > * {
+        display:none;
+      }
 
-/* 背景を白に */
-body {
-  background: #fff;
-  padding: 20px 10px;
-}
+      #works {
+        display:block !important;
+      }
 
-/* 作品一覧を画面いっぱいに */
-.wrap {
-  max-width: none;
-  width: 100%;
-}
+      body{
+        padding-left:0;
+        padding-right:0;
+        justify-content:flex-start;
+      }
 
-.content {
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
-}
+      .wrap{
+        max-width:100%;
+        width:100%;
+        margin:0;
+      }
 
-/* 作品グリッド */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
+      .main{
+        grid-template-columns:1fr;
+        gap:12px;
+      }
 
-/* サムネは正方形だけ */
-.thumb {
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  background: none;
-}
+      .hero img{
+        object-fit:contain;
+      }
 
-.thumb img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
-/* タイトル・日付を消す */
-.meta {
-  display: none;
-}
-
+      .tags{gap:8px;}
+      .tag{flex:1 1 auto;min-width:0;}
+    }
   </style>
 </head>
 
